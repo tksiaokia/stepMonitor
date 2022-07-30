@@ -1,5 +1,4 @@
-import { FetchActionTypes } from '../types';
-import { GET_WEATHER, WeatherActionTypes, WeatherResponseInterface } from '../types/weather.types';
+import {GET_WEATHER, WeatherResponseInterface} from '../types/weather.types';
 
 interface WeatherState {
   weatherResponse: WeatherResponseInterface;
@@ -10,7 +9,6 @@ const initialState: WeatherState = {
   weatherResponse: <WeatherResponseInterface>{},
   error: undefined,
 };
-export type WeatherAActionTypes = WeatherActionTypes | FetchActionTypes;
 export function weatherReducer(
   state: WeatherState = initialState,
   action: any,

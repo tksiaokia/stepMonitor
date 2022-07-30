@@ -1,7 +1,8 @@
 export interface WeatherResponseInterface {
   timezone: string;
   current: CurrentWeatherInterface;
-  daily: WeatherForecaseInterface[];
+  hourly: CurrentWeatherInterface[];
+  daily: WeatherForecastInterface[];
 }
 
 export interface CurrentWeatherInterface {
@@ -10,7 +11,7 @@ export interface CurrentWeatherInterface {
   temp: number;
 }
 
-export interface WeatherForecaseInterface {
+export interface WeatherForecastInterface {
   dt: number;
   weather: WeatherInterface[];
   temp: WeatherTemperatureInterface;
