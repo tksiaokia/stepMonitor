@@ -1,1 +1,1 @@
-export * from '../screens/WeatherPage';
+export * from './Home';

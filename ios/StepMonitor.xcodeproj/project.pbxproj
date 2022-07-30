@@ -37,6 +37,10 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StepMonitor/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = StepMonitor/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-StepMonitor-StepMonitorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StepMonitor-StepMonitorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C18A0F428952BB700BE321A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		2C18A0F62895329900BE321A /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		2C18A0F72895329900BE321A /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		2C18A0F82895329900BE321A /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-StepMonitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepMonitor.debug.xcconfig"; path = "Target Support Files/Pods-StepMonitor/Pods-StepMonitor.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-StepMonitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepMonitor.release.xcconfig"; path = "Target Support Files/Pods-StepMonitor/Pods-StepMonitor.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-StepMonitor-StepMonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepMonitor-StepMonitorTests.debug.xcconfig"; path = "Target Support Files/Pods-StepMonitor-StepMonitorTests/Pods-StepMonitor-StepMonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		13B07FAE1A68108700A75B9A /* StepMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				2C18A0F328952B8900BE321A /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -94,6 +99,17 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = StepMonitor;
+			sourceTree = "<group>";
+		};
+		2C18A0F328952B8900BE321A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2C18A0F428952BB700BE321A /* FontAwesome.ttf */,
+				2C18A0F62895329900BE321A /* FontAwesome5_Brands.ttf */,
+				2C18A0F82895329900BE321A /* FontAwesome5_Regular.ttf */,
+				2C18A0F72895329900BE321A /* FontAwesome5_Solid.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
