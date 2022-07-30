@@ -19,7 +19,7 @@ const WeatherForecastCell: React.FC<WeatherForecastCellProps> = ({
   weatherForecast,
 }) => {
   return (
-    <View style={styles.cellContainer}>
+    <View key={weatherForecast.dt} style={styles.cellContainer}>
       <Text style={styles.day}>
         {' '}
         {moment.unix(weatherForecast.dt).format('dddd')}

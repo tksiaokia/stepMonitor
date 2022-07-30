@@ -6,9 +6,14 @@ export const weatherService = {
   getWeather,
 };
 
-async function getWeather(): Promise<WeatherResponseInterface> {
+async function getWeather(
+  lat: number,
+  long: number,
+): Promise<WeatherResponseInterface> {
+  //'?lat=3.147424&lon=101.694999&exclude=minutely&units=metric&appid=58b7da87728d27461956c2e57d51d4a4',
+
   return httpGet(
     weatherUrl +
-      '?lat=3.147424&lon=101.694999&exclude=minutely&units=metric&appid=58b7da87728d27461956c2e57d51d4a4',
+      `?lat=${lat}&lon=${long}&exclude=minutely&units=metric&appid=58b7da87728d27461956c2e57d51d4a4`,
   );
 }

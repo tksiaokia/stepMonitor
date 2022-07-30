@@ -21,7 +21,7 @@ interface WeatherHourViewProps {
 const WeatherHourView: React.FC<WeatherHourViewProps> = ({weather, isNow}) => {
   let temp = Math.round(weather.temp);
   return (
-    <View style={styles.hourContainer}>
+    <View key={weather.dt} style={styles.hourContainer}>
       {isNow ? (
         <Text style={{fontWeight: 'bold', fontSize: 17}}>Now</Text>
       ) : (

@@ -1,1 +1,1 @@
-export * from './WeatherPage';
+export * from '../screens/WeatherPage';

@@ -6,6 +6,11 @@ import {Provider} from 'react-redux';
 import {Home} from './src/containers';
 import {store} from './src/redux/store';
 import {Colors} from './node_modules/@rneui/base/dist/helpers/colors.d';
+import RNLocation from 'react-native-location';
+
+RNLocation.configure({
+  distanceFilter: 5.0,
+});
 
 const myTheme = createTheme({
   Text: {

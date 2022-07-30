@@ -1,5 +1,3 @@
-import {ThunkAction, ThunkDispatch} from 'redux-thunk';
-
 import {ActionCreator, AnyAction, Dispatch} from 'redux';
 
 import {weatherService} from '../../services/weather.services';
@@ -16,15 +14,15 @@ const getWeatherSuccess: ActionCreator<WeatherActionTypes> = (
   return {type: GET_WEATHER, payload: weather};
 };
 
-export const getWeather = () => async (dispatch: Dispatch<any>) => {
-  dispatch(request());
-  await weatherService.getWeather().then(
-    response => {
-      console.log(response);
-      dispatch(getWeatherSuccess(response));
-    },
-    error => {
-      dispatch(failure('Server error.'));
-    },
-  );
-};
+export const getWeather =
+  (lat: number, long: number) => async (dispatch: Dispatch<any>) => {
+    dispatch(request());
+    await weatherService.getWeather(lat, long).then(
+      response => {
+        dispatch(getWeatherSuccess(response));
+      },
+      error => {
+        dispatch(failure('Server error.'));
+      },
+    );
+  };
