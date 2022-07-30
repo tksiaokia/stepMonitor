@@ -10,6 +10,7 @@ import RNLocation from 'react-native-location';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {WeatherScreen} from './src/screens/WeatherScreen';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
+import {HomeScreen} from './src/screens/HomeScreen';
 
 RNLocation.configure({
   distanceFilter: 5.0,
@@ -28,7 +29,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Weather"
       screenOptions={({route}) => ({
         headerStyle: {
           backgroundColor: '#81B622',
@@ -77,7 +78,7 @@ function MyTabs() {
           ),
         }}
         name="Home"
-        component={WeatherScreen}
+        component={HomeScreen}
       />
       <Tab.Screen
         options={{

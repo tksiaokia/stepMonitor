@@ -17,6 +17,7 @@ import {WeatherHeader} from '../components/weather/WeatherHeader';
 import {getWeather} from '../redux/actions/weather.actions';
 import {RootState} from '../redux/reducers';
 import {getLocation} from '../redux/actions/location.actions';
+import {LoadingView} from '../components/base/LoadingView';
 
 const {height} = Dimensions.get('window');
 
@@ -34,7 +35,7 @@ export const WeatherScreen: React.FC<Props> = props => {
     }
   }, [location]);
 
-  if (status == undefined) return null;
+  if (status == undefined) return <LoadingView />;
 
   if (!status)
     return (
@@ -56,7 +57,7 @@ export const WeatherScreen: React.FC<Props> = props => {
       </View>
     );
 
-  if (weatherResponse.current == undefined) return null;
+  if (weatherResponse.current == undefined) return <LoadingView />;
 
   let divider = <Divider width={1} color={'#ffffff60'} />;
   return (
@@ -79,11 +80,9 @@ const styles = StyleSheet.create({
     justifyContent: `center`,
     padding: 20,
     flexGrow: 1,
-    height: height - 56,
   },
   scrollView: {
     flexGrow: 1,
-    height: height - 56,
   },
   button: {
     marginTop: 20,
