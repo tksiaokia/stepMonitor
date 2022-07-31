@@ -1,12 +1,10 @@
-import {Divider, Image, Text} from '@rneui/themed';
+import {Image, Text} from '@rneui/themed';
 import moment from 'moment';
 import React from 'react';
-import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {weatherImageUrl} from '../../constants/constant';
 
 import {WeatherForecastInterface} from '../../redux/types';
-
-const {width, height} = Dimensions.get('window');
 
 interface WeatherForecastListViewProps {
   weatherForecasts: WeatherForecastInterface[];
@@ -21,7 +19,6 @@ const WeatherForecastCell: React.FC<WeatherForecastCellProps> = ({
   return (
     <View key={weatherForecast.dt} style={styles.cellContainer}>
       <Text style={styles.day}>
-        {' '}
         {moment.unix(weatherForecast.dt).format('dddd')}
       </Text>
       <Image

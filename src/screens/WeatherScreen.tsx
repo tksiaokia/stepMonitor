@@ -1,13 +1,6 @@
 import {Divider, Text, Button} from '@rneui/themed';
-import React, {useEffect, useState} from 'react';
-import {
-  Dimensions,
-  Linking,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  View,
-} from 'react-native';
+import React, {useEffect} from 'react';
+import {Linking, Platform, ScrollView, StyleSheet, View} from 'react-native';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {CurrentWeatherHourView} from '../components/weather/CurrentWeatherHourView';
@@ -18,8 +11,6 @@ import {getWeather} from '../redux/actions/weather.actions';
 import {RootState} from '../redux/reducers';
 import {getLocation} from '../redux/actions/location.actions';
 import {LoadingView} from '../components/base/LoadingView';
-
-const {height} = Dimensions.get('window');
 
 interface Props {}
 export const WeatherScreen: React.FC<Props> = props => {

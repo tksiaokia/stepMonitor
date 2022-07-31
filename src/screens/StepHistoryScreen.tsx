@@ -4,7 +4,7 @@ import {StyleSheet, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {RootState} from '../redux/reducers';
-import {getStepCount, setStepGoal} from '../redux/actions/step.actions';
+import {getStepCount} from '../redux/actions/step.actions';
 
 import {LoadingView} from '../components/base/LoadingView';
 import {StepCountHistoryListView} from '../components/stepCount/StepCountHistoryListView';

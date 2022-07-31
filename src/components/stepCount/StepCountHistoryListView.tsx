@@ -5,8 +5,6 @@ import {Dimensions, StyleSheet, View} from 'react-native';
 
 import {StepCountInterface} from '../../redux/types/step.types';
 
-const {width, height} = Dimensions.get('window');
-
 interface StepCountHistoryListViewProps {
   stepCounts: StepCountInterface[];
 }

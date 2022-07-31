@@ -1,15 +1,8 @@
-import {Divider, Text} from '@rneui/themed';
+import {Text} from '@rneui/themed';
 import React from 'react';
 import {Dimensions, StyleSheet, View} from 'react-native';
 
-import {WeatherInterface, WeatherResponseInterface} from '../../redux/types';
-import {CurrentWeatherHourView} from './CurrentWeatherHourView';
-import {
-  WeatherForecastCell,
-  WeatherForecastListView,
-} from './WeatherForecastListView';
-
-const {width, height} = Dimensions.get('window');
+import {WeatherResponseInterface} from '../../redux/types';
 
 interface WeatherHeaderProps {
   weather: WeatherResponseInterface;

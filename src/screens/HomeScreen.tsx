@@ -1,6 +1,6 @@
-import {Text, Button, Dialog, Input} from '@rneui/themed';
+import {Text, Dialog, Input} from '@rneui/themed';
 import React, {useEffect, useState} from 'react';
-import {Linking, Platform, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {useDispatch, useSelector} from 'react-redux';
 
@@ -74,7 +74,7 @@ export const HomeScreen: React.FC<Props> = props => {
     <>
       <View style={styles.container}>
         <Text style={styles.todayText}>
-          {moment(todayStep.startDate).format('DD MMM yyyy')}
+          {moment(todayStep.date).format('DD MMM yyyy')}
         </Text>
         <CircularProgress
           value={todayStep.value}
