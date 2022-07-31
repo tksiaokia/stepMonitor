@@ -5,7 +5,11 @@ import {Linking, Platform, StyleSheet, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {RootState} from '../redux/reducers';
-import {getStepCount, setStepGoal} from '../redux/actions/step.actions';
+import {
+  getStepCount,
+  getStepGoal,
+  setStepGoal,
+} from '../redux/actions/step.actions';
 import {useFocusEffect} from '@react-navigation/native';
 import CircularProgress from 'react-native-circular-progress-indicator';
 
@@ -25,7 +29,7 @@ export const HomeScreen: React.FC<Props> = props => {
   var timerID: number = 0;
 
   useEffect(() => {
-    dispatch(getStepCount());
+    dispatch(getStepGoal());
   }, []);
   useFocusEffect(() => {
     //Something wrong back healthkit backgroung fetch task, it crash my simulator, temporary use interval timer to keep fetching

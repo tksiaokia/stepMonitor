@@ -1,6 +1,5 @@
 export interface StepCountInterface {
-  startDate: string;
-  endDate: string;
+  date: string;
   value: number;
 }
 

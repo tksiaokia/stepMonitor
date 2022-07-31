@@ -1,1 +1,3 @@
-export * from './WeatherPage';
+export * from './WeatherScreen';
+export * from './HomeScreen';
+export * from './StepHistoryScreen';

@@ -62,6 +62,7 @@ export const getStepCount = () => async (dispatch: Dispatch<any>) => {
     (error: string, value: HealthValue) => {
       if (error) {
         dispatch(stepCountPermissionStatus(false));
+
         console.log('[ERROR] Cannot grant permissions!');
       }
       dispatch(stepCountPermissionStatus(true));
@@ -69,8 +70,8 @@ export const getStepCount = () => async (dispatch: Dispatch<any>) => {
       let today = new Date();
       let last7Day = new Date(today.getDate() - 7);
       let options = {
-        startDate: last7Day.toISOString(), // required
-        endDate: today.toISOString(), // optional; default now
+        startDate: last7Day.toISOString(),
+        endDate: today.toISOString(),
       };
       AppleHealthKit.getDailyStepCountSamples(
         options,
@@ -79,16 +80,28 @@ export const getStepCount = () => async (dispatch: Dispatch<any>) => {
             return;
           }
 
-          var groupedResult: any[] = [];
+          const groupedResult: StepCountInterface[] = [];
           results.reduce(function (res: any, value) {
-            let date = moment(value.startDate).format('yyyy/MM/DD');
+            let date = moment(value.endDate).format('yyyy-MM-DD');
+
             if (!res[date]) {
-              res[date] = {startDate: date, endDate: date, value: 0};
+              res[date] = {date: date, value: 0};
               groupedResult.push(res[date]);
             }
             res[date].value += value.value;
             return res;
           }, {});
+
+          //show 0 for today if no record from healthkit
+          const todayDateKey = moment(today).format('yyyy-MM-DD');
+
+          if (!groupedResult.find(x => x.date == todayDateKey)) {
+            groupedResult.splice(0, 0, {
+              date: todayDateKey,
+              value: 0,
+            });
+          }
+          //dispatch
           dispatch(getStepCountSuccess(groupedResult));
         },
       );
